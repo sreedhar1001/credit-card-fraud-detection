@@ -3,7 +3,7 @@ import pandas as pd
 import joblib
 
 # Load the pre-trained model
-model = joblib.load("fraud_detection_model.pkl")    
+model = joblib.load("fraud_detection_pipeline.pkl")    
 
 st.title("Credit Card Fraud Detection App")
 st.markdown("Enter the transaction details below to predict if it's fraudulent or not.")
@@ -38,4 +38,5 @@ if st.button("Predict"):
     if prediction[0] == 1:
         st.error("🚨 Warning: Fraud Detected!")
     else:
+
         st.success("✅ Transaction is Legitimate.")
